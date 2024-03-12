@@ -69,3 +69,17 @@ kubectl describe pod nginx
 ```sh
 kubectl get pods -o wide
 ```
+
+### How to Run Yaml File to 
+1. creating containers using yaml
+```sh
+kubectl apply -f nginx.yml
+```
+checking the status
+```sh
+kubectl get pods
+```
+if you want more details about your container
+```sh
+kubectl describe nginx
+```
