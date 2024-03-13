@@ -145,5 +145,79 @@ or
 ```sh
 kubectl replace -f replicaset-difinition.yml
 ```
+5. how to edit the Replicaset replicas
+```sh
+kubectl edit relicaset myapp-replicaset/application_name
+```
+6. without editing the changing the scale of replicas
+```sh
+kubectl scale replicaset myapp-appname --repplicas=2
+```
 
+#### Replica Set Lab:
+1. How many PODs exist on the system?
+```sh
+kubectl get pods 
+```
+2. How many ReplicaSets exist on the system?
+```sh
+kubectl get replicaset
+```
+3. What is the image used to create the pods in the new-replica-set
+```sh
+kubectl describe replicaset new-replica-set/replicasetname
+```
+4. How many PODs are READY in the new-replica-set?
+```sh
+kubectl get replicaset
+```
+    - shows desire/current/ready details
+5. Why do you think the PODs are not ready?
+```sh
+kubectl describe pods
+```
+    - check events: you will find the reason 
+6. Deleting any pod 
+```sh
+kubectl delete pod pod_name
+```
+7. Creating Replicaset using yaml file
+```sh
+kubectl create -f my_replicaset.yaml
+```
+8. To View Replicasets
+```sh
+kubectl get replicaset
+```
+9. Deleting the replicaset
+```sh
+kubectl delete replicaset name_replicaset
+```
+10. Fix the original replica set new-replica-set to use the correct busybox image
+```sh
+kubectl get ps
+kubectl edit rs new-replica-set
+```
+if not updated the image in old pods delete the pods and then replica set will create again.
+11. scale up the pods
+```sh
+kubectl scale replicaset new-replica-set --replicas=
+kubectl edit rs new-replicaset # you can edit inside going the file
+```
+
+
+#### Deployment Kubernetes
+1. How many Deployments exist on the system?
+```sh
+kubectl get deployments
+```
+2. To get help with creating pods 
+```sh
+kubectl create deployment --help
+```
+3. creating without yaml file 
+```sh
+kubectl create deployment httpd-frontend --image=httpd:2.4-alpine --re
+plicas=3
+```
 
