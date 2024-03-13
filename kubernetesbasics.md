@@ -83,3 +83,32 @@ if you want more details about your container
 ```sh
 kubectl describe nginx
 ```
+deleting the pod containers
+```sh
+kubectl delete pod podname/webapp
+```
+
+#### Replication Controller Vs Replica Set Commands
+1. Replication Controller Commands
+To Run playbook
+```sh
+kubectl create -f rc-difination.yml
+```
+2. To view list of created controllers 
+```sh
+kubectl get replicationcontroller
+```
+3. to view the pods for replications how many running
+```sh
+kubectl get pods
+```
+
+#### Replica Set
+1. To Run replicaset yaml file
+```sh
+kubectl create -f replicaset-definition.yml
+```
+2. to view the pods in replicaset 
+```sh
+kubectl get replicaset
+```
