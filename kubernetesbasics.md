@@ -112,3 +112,38 @@ kubectl create -f replicaset-definition.yml
 ```sh
 kubectl get replicaset
 ```
+
+
+#### Updating the replicas how 
+1. update teh replicas in yaml files and save and run the yaml file using replace command
+```sh
+kubectl replace -f replicaset-difinition.yml
+```
+2. using scale command give paramater of replicas desired numbers
+```sh
+kubectl scale --replicas=6 -f replicaset-difinition.yml
+```
+Common Commands
+1. Creating replicaset using yaml file
+```sh
+kubectl create -f replicaset-difinition.yml
+```
+2. To see list of replicaset 
+```sh
+kubectl get replicaset
+```
+3. to delete the replicaset
+```sh
+kubectl delete replicaset myapp-aplicationame
+```
+    - also deletes all underlying pods
+4. Scaale command
+```sh
+kubectl scale --replicas=6 -f replicaset-definitio
+```
+or
+```sh
+kubectl replace -f replicaset-difinition.yml
+```
+
+
